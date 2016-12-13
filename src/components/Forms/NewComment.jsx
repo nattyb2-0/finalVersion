@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 
 
- class NewComment extends Component {
+ export default class NewComment extends Component {
+//   updateCommentState(e){
+
+// }
   createComment(event){
   event.preventDefault();
   console.log('btn id', event.target.id);
