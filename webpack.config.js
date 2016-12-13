@@ -37,10 +37,7 @@ module.exports = {
   module : {
     include: path.join(__dirname, 'src'),
     loaders: [
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-      },
+     { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
       {
         test: /\.svg$/,
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'

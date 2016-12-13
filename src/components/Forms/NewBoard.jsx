@@ -36,10 +36,12 @@ const board ={
 }
   render(){
     return(
+      <div>
+      <h1>Create A Board</h1>
       <form ref={(input)=>this.form = input} action="" className="addBoard" onSubmit={(e)=>this.createBoard(e)}>
-        <input ref={(input)=>{this.inmateName = input}} type="text" placeholder="inmate name" className="inmateName"/>
-        <input ref={(input)=>{this.statenumber = input}} type="text" placeholder="state number" className="stateNumber"/>
-        <input ref={(input)=>{this. nickname = input} }type="text" placeholder="nickname, alias, aka etc" className="nickname"/>
+        <input required ref={(input)=>{this.inmateName = input}} type="text" placeholder="inmate name" className="inmateName"/>
+        <input required ref={(input)=>{this.statenumber = input}} type="text" placeholder="state number" className="stateNumber"/>
+        <input required ref={(input)=>{this. nickname = input} }type="text" placeholder="nickname, alias, aka etc" className="nickname"/>
         <select ref={(input)=>{this. institution = input}} name="institution" >
            <option value="Northern State Prison">Northern State Prison</option>
            <option value="East Jersy State Prison">East Jersy State Prison</option>
@@ -47,8 +49,9 @@ const board ={
            <option value="Albert C. Wagner Youth Correctional">Albert C. Wagner Youth Correctional</option>
        </select>
         <input ref={(input)=>{this.inmatephoto = input}} type="file" name="inmatePic" accept="image/*" className="imageHolder"/>
-        <button type="submit">Create A Board For Inmate</button>
+        <button type="submit">Submit</button>
       </form>
+      </div>
       )
   }
 }

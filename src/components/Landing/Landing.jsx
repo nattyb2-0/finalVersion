@@ -6,7 +6,6 @@ export default class Landing extends Component {
   render(){
     return(
         <div>
-        <p>{this.props.name}</p>
         <Header />
         <About />
         </div>

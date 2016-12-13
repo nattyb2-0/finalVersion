@@ -11,6 +11,7 @@ renderAllPosts(){
         username={post.username}
         image= {post.body}
         title= {post.title}
+        btnid={post.postid}
       />
   )
 }

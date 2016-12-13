@@ -22,9 +22,10 @@ export default class Signup extends Component {
   render(){
     return(
       <div className="signup">
-        <input type="text" className="userName" required placeholder="First Name, Last Name" ref={(input)=>{this.username=input}} />
-        <input type="email" className="email" required placeholder="something@something.com" ref={(input)=>{this.email=input}} />
-        <input type="password" className="password" required placeholder="password" ref={(input)=>{this.password=input}} />
+        <h1>SIGN UP </h1>
+        <input required type="text" className="userName" required placeholder="First Name, Last Name" ref={(input)=>{this.username=input}} />
+        <input required type="email" className="email" required placeholder="something@something.com" ref={(input)=>{this.email=input}} />
+        <input required type="password" className="password" required placeholder="password" ref={(input)=>{this.password=input}} />
         <button className="submit" onClick={this.createUser.bind(this)}>Sign UP NOw</button>
       </div>
 

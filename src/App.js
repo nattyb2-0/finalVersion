@@ -9,6 +9,51 @@ import Signup  from './components/Forms/Signup.jsx';
 import Board from './components/Board/Board.jsx'
 
 
+// this.state.posts === [
+//   {
+//     title: 'ihgsisdh',
+//     body: 'shgoushgosg',
+//     post_id: '4',
+//     comments: [
+//       {
+//         text: 'igsiuhsdiuhsdvoshfohis',
+//         user_id: '82',
+//       },
+//       {
+//         text: 'wouerhoawoihrarf',
+//         user_id: '83',
+//       }
+//     ]
+//   },
+//   {
+//     title: 'sifugakd',
+//     body: 'ouaweyob,xzc',
+//     post_id: '5',
+//     comments: [
+//       {
+//         text: 'kjAEKj',
+//         user_id: '20',
+//       },
+//       {
+//         text: 'kajsnflnm ',
+//         user_id: '53',
+//       }
+//     ]
+//   },
+// ]
+
+// this.state.posts.map((post, i) =>
+//   <div>
+//     <Post
+//       title={post.title}
+//       comments={post.comments}
+//     />
+//     <Comments
+//       comments={post.comments}
+//     />
+//   </div>
+// )
+
 class App extends Component {
   constructor(){
     super();
@@ -16,7 +61,8 @@ class App extends Component {
     this.state={
       boards: [],
       posts: [],
-      user: []
+      user: [],
+      // comment: ''
     }
   }
 
@@ -56,8 +102,6 @@ console.log('inside of getAllBoards APPjsx ')
 
 
   addBoard(board){
-    //update state
-    // const boards = {this.state.boards};
     //add new board
 console.log('this is inside set state', board)
     //set state
@@ -65,12 +109,7 @@ console.log('this is inside set state', board)
     allBoards.push(board);
     this.setState({boards:allBoards});
     console.log('lets see the state',this.state.boards);
-  //   fetch('http://localhost:3000/boards')
-  // //data is returned in the form of json
-  //   .then(data => data.json())
 
-  //     // console.log(data);
-  //     // the state of the qu
     fetch('/boards', {
     headers: {
       'Content-Type': 'application/json'
@@ -83,17 +122,7 @@ console.log('this is inside set state', board)
 
 
   addUser(user){
-    //set state
-    // let allUsers = this.state.users;
-    // allUsers.push(user);
-    // this.setState({users:allUsers});
-    // console.log('lets see the state',this.state.users);
-  //   fetch('http://localhost:3000/boards')
-  // //data is returned in the form of json
-  //   .then(data => data.json())
 
-  //     // console.log(data);
-  //     // the state of the qu
     fetch('/users', {
     headers: {
       'Content-Type': 'application/json'
@@ -109,11 +138,6 @@ console.log('this is inside set state', board)
     // allPosts.push(post);
     // this.setState({posts:allPosts});
     // console.log('lets see the state',this.state.posts);
-  //   fetch('http://localhost:3000/boards')
-  // //data is returned in the form of json
-  //   .then(data => data.json())
-
-  //     // console.log(data);
   //     // the state of the qu
     fetch('/posts', {
     headers: {
@@ -121,18 +145,32 @@ console.log('this is inside set state', board)
     },
     method: 'POST',
     body: JSON.stringify(post)
+
   })
   .catch(err => console.log(err));
   }
+
+
   render() {
     return (
       <div className="App">
-
-        <Landing name='natty'/>
-        <Signup addUser={this.addUser}/>
-        <NewBoard addBoard={this.addBoard}/>
-        <NewPost addPost={this.addPost}/>
-        <Board  getAllPosts={this.getAllPosts.bind(this)} posts={this.state.posts} />
+        <Landing />
+        <div className="flexR">
+          <div className="divideSidel">
+            <div className="flexC">
+              <Signup addUser={this.addUser}/>
+            </div>
+          </div>
+          <div className="mainSide">
+           <Board  getAllPosts={this.getAllPosts.bind(this)} posts={this.state.posts}  />
+          </div>
+          <div className="divideSideR">
+            <div className="flexC">
+            <NewBoard addBoard={this.addBoard}/>
+            <NewPost addPost={this.addPost}/>
+            </div>
+          </div>
+      </div>
       </div>
     );
   }
