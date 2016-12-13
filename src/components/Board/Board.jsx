@@ -1,0 +1,29 @@
+import React, {Component} from 'react';
+import Post from '../Post/Post.jsx';
+import './Board.css';
+
+export default class Board extends Component{
+renderAllPosts(){
+  return this.props.posts.map((post, i) =>
+    <Post
+        id={post.postid}
+        key={i}
+        username={post.username}
+        image= {post.body}
+        title= {post.title}
+      />
+  )
+}
+  componentWillMount() {
+    this.props.getAllPosts();
+}
+render(){
+      console.log(this.props)
+    return(
+        <div className="board">
+          {this.renderAllPosts()}
+        </div>
+      );
+  }
+}
+

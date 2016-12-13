@@ -21,7 +21,7 @@ render(){
   return(
     <form ref={(input)=>this.form = input} action="" className="" onSubmit={(e)=>this.createPost(e)}>
         <textarea ref={(input)=>{this.title = input}} name="" maxLength="30" className="title"></textarea>
-        <input ref={(input)=>{this.pic = input}} type="file" accept="image/*"/>
+        <input type="text" ref={(input)=>{this.pic = input}} />
         <button>create new post </button>
     </form>
     )

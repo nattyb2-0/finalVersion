@@ -5,7 +5,10 @@ import Landing from './components/Landing/Landing.jsx'
 import NewBoard from './components/Forms/NewBoard.jsx'
 import Post from './components/Post/Post.jsx';
 import NewPost from './components/Forms/NewPost.jsx';
-import Signup  from './components/Forms/Signup.jsx'
+import Signup  from './components/Forms/Signup.jsx';
+import Board from './components/Board/Board.jsx'
+
+
 class App extends Component {
   constructor(){
     super();
@@ -16,13 +19,27 @@ class App extends Component {
       user: []
     }
   }
-getAllBOARDS(){
-  console.log('inside of getAllBoards APPjsx ')
+
+  getAllPosts() {
+      console.log('inside get all posts')
+      fetch(`/posts`)
+      .then(r => r.json())
+      .then((data) => {
+        this.setState({
+          posts: data
+          })
+        })
+      .catch(err => console.log(err))
+    }
+
+getAllBoards(){
+console.log('inside of getAllBoards APPjsx ')
   fetch('/boards')
   //data is returned in the form of json
     .then(data => data.json())
     .then(data => {
-      // console.log(data);
+       console.log(data);
+       console.log('inside fetch')
       // the state of the question array is updated and passed the value thats held in the
       // data object
       // console.log('this inside of getAllQuestions: ', this);
@@ -34,6 +51,9 @@ getAllBOARDS(){
      // .then(this.getAllQuestions())
     .catch(err => console.log(err));
 }
+
+
+
 
   addBoard(board){
     //update state
@@ -60,6 +80,7 @@ console.log('this is inside set state', board)
   })
   .catch(err => console.log(err));
   }
+
 
   addUser(user){
     //set state
@@ -110,9 +131,8 @@ console.log('this is inside set state', board)
         <Landing name='natty'/>
         <Signup addUser={this.addUser}/>
         <NewBoard addBoard={this.addBoard}/>
-        <Post />
         <NewPost addPost={this.addPost}/>
-
+        <Board  getAllPosts={this.getAllPosts.bind(this)} posts={this.state.posts} />
       </div>
     );
   }

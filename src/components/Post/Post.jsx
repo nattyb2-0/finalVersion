@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import './Post.css';
 
-export default class Post extends Component {
-  render(){
-    return(
+const Post = props => (
+
         <div className="post">
           <header className="pheader">
             <div className="flexCol">
-            <img className="profilepic" src='http://images.clipartpanda.com/prisoner-clipart-prisoner.png'/>
-            <h3>natty</h3>
+            <h3>{props.username}</h3>
             </div>
             <img src="https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/256/Map-Marker-Push-Pin--Right-Pink.png" alt="" className="pin"/>
-            <h1 className="headerName">This shit is awesome in react</h1>
+            <h1 className="headerName">{props.title}</h1>
           </header>
           <main className="postBody">
             <section className="postpicSec">
-              <img src='http://images.clipartpanda.com/prisoner-clipart-prisoner.png' alt="" className="postpic"/>
+              <img src={props.image} alt="" className="postpic"/>
             </section>
             <hr></hr>
             <section className="comm-likes">
@@ -37,6 +35,7 @@ export default class Post extends Component {
             </div>
           </footer>
         </div>
-      )
-  }
-}
+      );
+
+export default Post;
+
