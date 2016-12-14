@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "React application template using webpack",
   "main": "server.js",
+  "engines": {
+    "node": "7.0.0"
+  },
   "private": true,
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules",
-    "heroku-prebuild": "bash ./scripts/deployment_react.sh",
+    "heroku-prebuild": " bash ./scripts/deployment_react.sh",
     "heroku-postbuild": " bash ./scripts/deployment_cleanup.sh",
     "start": "node server.js",
     "rebuild": "webpack -d --progress --colors",
