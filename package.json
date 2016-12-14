@@ -19,21 +19,21 @@
     "type": "",
     "url": ""
   },
-  "author": "Bobby King",
+  "author": "Natty Davis",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/gittheking/react_template/issues"
+    "url": "https://github.com/nattyb2-0/finalVersion"
   },
-  "homepage": "https://github.com/gittheking/react_template#readme",
+  "homepage": "https://github.com/nattyb2-0/finalVersion",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "dotenv": "^2.0.0",
+
     "express": "^4.14.0",
     "history": "^1.17.0",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
-    "pg-promise": "^5.2.7",
-    "react-router": "^3.0.0"
+    "pg-promise": "^5.2.7"
+
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -51,6 +51,7 @@
     "postcss-loader": "^1.1.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-router": "^3.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
