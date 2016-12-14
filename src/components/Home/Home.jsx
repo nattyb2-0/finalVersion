@@ -1,13 +1,13 @@
-mport React, {Component} from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router';
-import Header from '../Header/Header.jsx'
+// import Header from '../Header/Header.jsx'
 import style from './Home.css';
 
 export default class Home extends Component {
   render(){
     return(
       <div className="home">
-        <Header />
+
         <section className="top" >
            <h1>PHOTOSHARE WITH INMATES</h1>
            <p>Simply Create Story Boards and tag them with your pictures <br/>
