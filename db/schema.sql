@@ -34,20 +34,20 @@ created_at TIMESTAMP DEFAULT current_timestamp
 
 );
 
--- CREATE TABLE comments(
--- commentId SERIAL PRIMARY KEY,
--- postId integer,
--- body   text NOT NULL,
--- username VARCHAR NOT NULL,
--- created_at TIMESTAMP DEFAULT current_timestamp
--- );
+CREATE TABLE comments(
+commentId SERIAL PRIMARY KEY,
+postId integer,
+body   text NOT NULL,
+username VARCHAR NOT NULL,
+created_at TIMESTAMP DEFAULT current_timestamp
+);
 
--- CREATE TABLE likes(
---   likeId SERIAL PRIMARY KEY,
---   postId integer,
---   username VARCHAR NOT  NULL,
---   created_at TIMESTAMP DEFAULT current_timestamp
--- );
+CREATE TABLE likes(
+  likeId SERIAL PRIMARY KEY,
+  postId integer,
+  username VARCHAR NOT  NULL,
+  created_at TIMESTAMP DEFAULT current_timestamp
+);
 
 -- -- CREATE TABLE userBoard(
 -- --   userId integer NOT Null REFERENCES users(userId) ON UPDATE CASCADE,
@@ -98,3 +98,9 @@ created_at TIMESTAMP DEFAULT current_timestamp
 -- REFERENCES boards(board) On DELETE CASCADE;
 
 COMMIT;
+
+-- SELECT doormen.name
+-- FROM doormen
+-- LEFT JOIN buildings
+-- ON doormen.building_id = buildings.id
+-- WHERE buildings.num_floors > 5

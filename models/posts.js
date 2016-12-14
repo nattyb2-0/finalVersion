@@ -5,13 +5,29 @@ function showAllPosts(req, res, next){
     SELECT *
     FROM posts;
    `)
-    .then((users) => {
-      res.users = users;
-      console.log(users);
+    .then((posts) => {
+      res.posts = posts;
+      console.log(posts);
       next();
     })
     .catch(error => next(error));
 }
+
+// function showAllPosts(req,res,next){
+//   db.any(`SELECT posts.postId, posts.title, posts.body, comments.body
+// FROM posts
+// LEFT JOIN comments
+// ON posts.postId = comments.postId
+// ;
+// `)
+//   .then((posts) => {
+//       res.posts = posts;
+//       console.log(posts);
+//       next();
+//     })
+//     .catch(error => next(error));
+// }
+
 
 
 function createPost(req, res, next){

@@ -37,7 +37,7 @@ app.post('/boards', createBoard, (req,res)=>{
 
 
 app.get('/posts', showAllPosts,  (req,res) =>{
-  res.json(res.users|| []);
+  res.json(res.posts|| []);
 });
 
 app.post('/posts', createPost, (req,res) =>{

@@ -3,6 +3,7 @@ import './Post.css';
 import CommentContainer from '../Comments/CommentsContainer.jsx'
 import LikesContainer from '../Likes/LikesContainer.jsx'
 import NewComment  from '../Forms/NewComment.jsx'
+import NewLike from '../Forms/NewLike.jsx'
 const Post = props => (
 
         <div className="post">
@@ -26,14 +27,15 @@ const Post = props => (
           </main>
           <hr></hr>
           <footer className="footer">
-            <img src='http://images.clipartpanda.com/prisoner-clipart-prisoner.png' alt="" className="likePhoto"/>
-            <div>
+                <NewLike btnid={props.btnid}/>
+             <div>
+               <NewComment btnid={props.btnid}/>
+             </div>
+            <div className="subDel">
+             <input type="text('some text')" className="delete-flag"/>
 
             </div>
-            <div className="subDel">
-            <input type="text('some text')" className="delete-flag"/>
-            </div>
-          </footer>
+           </footer>
         </div>
       );
 
