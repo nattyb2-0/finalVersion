@@ -6,9 +6,13 @@ import {render} from 'react-dom'
 // import Profile from "./Components/Profile/Profile.jsx"
 // import Signup from "./Components/Signup/Signup.jsx"
 // import TTT from "./components/Signup/TTT.jsx"
-import Landing from "./components/Landing/Landing.jsx"
-import Signup from "./components/Forms/Signup.jsx"
+import Home from "./components/Home/Home.jsx"
+ import Signup from "./components/Forms/Signup.jsx"
+ import Landing from "./components/Landing/Landing.jsx"
 
+import {Router, Route, IndexRoute, hashHistory} from 'react-router'
+// import Post from "./components/Post/Post.jsx"
+// import Board from "./components/Board/Board.jsx"
 
 const Root = ()=>{
   return(
@@ -26,4 +30,9 @@ Signup.contextTypes = {
   router: React.PropTypes.object
 }
 
-render(<App/>, document.querySelector('#root-container'));
+render(
+  <Router history={hashHistory}>
+    <Route path="/" component={Home}></Route>
+
+    <Route path="app" component={App}></Route>
+</Router>, document.querySelector('#root-container'));
