@@ -1,7 +1,7 @@
 {
-  "name": "bobby-king-react-template",
+  "name": "flickbook-react",
   "version": "1.0.0",
-  "description": "React application template using webpack",
+  "description": "Photo share",
   "main": "server.js",
   "engines": {
     "node": "7.0.0"
