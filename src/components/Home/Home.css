@@ -1,0 +1,77 @@
+.home h1 {
+  text-align: center;
+  color:black;
+}
+
+.top{
+  text-align: center;
+  width:60%;
+  height:auto;
+  margin: 0 auto;
+  margin-top: 30px;
+ /* background-color: rgba(255,255,255,.7);*/
+  font-size: 1.7em;
+  padding: .4em;
+  color:rgb(174, 174, 175);
+}
+
+.descr{
+  text-align: center;
+  width:60%;
+  height:auto;
+  margin: 0 auto;
+  margin-top: 30px;
+  color:rgb(174, 174, 175);
+  font-size: 1.7em;
+}
+
+.insp{
+  text-align: center;
+  width:60%;
+  height:auto;
+  margin: 0 auto;
+  margin-top: 30px;
+  color:rgb(174, 174, 175);
+  font-size: 1.7em;
+}
+
+.home{
+/*  background-image: url('./back2.jpg');*/
+background-image: url("https://cluster-web-static.s3.amazonaws.com/images/namespaces/default/homepage-billboard-v4bead2de.jpg");
+background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.wrksflex{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.home article{
+   width: 30%;
+    height: 200px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 8px;
+    padding: 8px;
+    font-size: 1.6em;
+}
+
+article h2 {
+    text-align: left;
+    font-size: 35px;
+    color: black;
+}
+.home ul{
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid black;
+  width:30%;
+  margin: 0 auto;
+  background-color: rgba(255,255,255,.8);
+}
