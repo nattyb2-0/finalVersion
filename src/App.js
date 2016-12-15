@@ -74,6 +74,7 @@ class App extends Component {
         this.setState({
           posts: data
           })
+        console.log('this is the updated state of posts', this.state.posts)
         })
       .catch(err => console.log(err))
     }
@@ -134,11 +135,6 @@ console.log('this is inside set state', board)
   }
 
   addPost(post){
-    // let allPosts = this.state.posts;
-    // allPosts.push(post);
-    // this.setState({posts:allPosts});
-    // console.log('lets see the state',this.state.posts);
-  //     // the state of the qu
     fetch('/posts', {
     headers: {
       'Content-Type': 'application/json'
@@ -147,6 +143,7 @@ console.log('this is inside set state', board)
     body: JSON.stringify(post)
 
   })
+    .then (this.getAllPosts())
   .catch(err => console.log(err));
   }
 

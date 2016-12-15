@@ -18,6 +18,31 @@ export default class Signup extends Component {
       this.props.addUser(user)
       console.log(user);
     }
+    renderInmate(){
+      console.log('rendering bitch')
+    }
+    searchForInmate(){
+      // console.log('it works');
+      // const nexw = document.getElementById('new');
+      // console.log(nexw);
+
+    fetch('/inmates')
+    .then(data => data.json())
+    .then( (data)=>{
+      console.log('bout to render this bitch')
+      console.log(data)
+      const nexw = document.getElementById('new');
+      // data.forEach((inmate)=>{
+        for(var i=0; i<data.length; i++){
+        let p = document.createElement('p');
+        p.innerHTML=data[i].inmatename;
+        nexw.appendChild(p);
+        console.log('this is inmate name',data[i].inmatename);
+        console.log('this is p',p);
+        console.log(nexw);
+      }
+    })
+}
 
   render(){
     return(
@@ -27,6 +52,17 @@ export default class Signup extends Component {
         <input required type="email" className="email" required placeholder="something@something.com" ref={(input)=>{this.email=input}} />
         <input required type="password" className="password" required placeholder="password" ref={(input)=>{this.password=input}} />
         <button className="submit" onClick={this.createUser.bind(this)}>Sign UP NOw</button>
+        <div>
+        <h2>Search for inmate by jail</h2>
+        <select ref={(input)=>{this. institution = input}}>
+           <option value="Northern State Prison">Northern State Prison</option>
+           <option value="East Jersy State Prison">East Jersy State Prison</option>
+           <option value="New Jersy State Prison">New Jersy State Prison</option>
+           <option value="Albert C. Wagner Youth Correctional">Albert C. Wagner Youth Correctional</option>
+       </select>
+       <button onClick={(e)=>this.searchForInmate(e)}>Search Now</button>
+        <div id="new"></div>
+        </div>
       </div>
 
 

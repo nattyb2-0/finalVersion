@@ -4,6 +4,7 @@ import './Board.css';
 
 export default class Board extends Component{
 renderAllPosts(){
+
   return this.props.posts.map((post, i) =>
     <Post
         id={post.postid}
@@ -15,11 +16,14 @@ renderAllPosts(){
       />
   )
 }
+
+
   componentWillMount() {
     this.props.getAllPosts();
 }
+
 render(){
-      console.log(this.props)
+      console.log('is this this.props for renderposts???', this.props)
     return(
         <div className="board">
           {this.renderAllPosts()}

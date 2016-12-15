@@ -19,6 +19,7 @@ const comment ={
 }
 
 console.log(comment)
+this.props.addComment(comment)
 }
   render(){
     return(

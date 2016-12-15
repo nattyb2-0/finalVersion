@@ -20,6 +20,7 @@ const {showAllUsers, createNewUser} = require('./models/users.js');
 const {showAllBoards, createBoard} = require('./models/boards.js');
 const {showAllPosts, createPost} = require('./models/posts.js');
 const {showAllComments, createComment} = require('./models/comments.js');
+const {getInmateData} = require('./models/inmates.js');
 const userRoute = require('./routes/user.js')
 app.get('/', userRoute);
 app.get('/users', showAllUsers,  (req,res) =>{
@@ -50,10 +51,12 @@ app.get('/comments', showAllComments, (req,res)=>{
   res.json(res.comments || []);
 })
 
-app.post('/comments', createPost, (req,res) =>{
+app.post('/comments', createComment, (req,res) =>{
   res.send('you have successfully posted')
 })
-
+app.get('/inmates', getInmateData, (req, res)=>{
+  res.json(res.inmates || [])
+})
 
 const authRoute = require('./routes/auth');
 app.get('/auth',authRoute);
