@@ -11,6 +11,7 @@ const APP_DIR           = path.resolve(__dirname, 'src');
 module.exports = {
   entry: `${APP_DIR}/index.js`,
   output: {
+    context:__dirname,
     path: BUILD_DIR,
     filename: '/js/[name].js',
   },
