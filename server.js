@@ -1,12 +1,13 @@
-if (process.env.NODE_ENV == 'development') require('dotenv').config({ silent: true });
+// if (process.env.NODE_ENV == 'development') require('dotenv').config({ silent: true });
 //adding comment to rebuild to heroku
+require('dotenv').config({ silent: true });
 const express = require('express');
 const logger  = require('morgan');
 const path    = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 
-const PORT = process.argv[2] || process.env.PORT || 3001;
+const PORT = process.argv[2] || process.env.PORT || 3000;
 
 app.listen(PORT, ()=>{
   console.log('server is running on', PORT)
