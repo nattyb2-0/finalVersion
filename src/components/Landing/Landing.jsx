@@ -7,7 +7,6 @@ export default class Landing extends Component {
     return(
         <div>
         <Header />
-        <About />
         </div>
       )
   }

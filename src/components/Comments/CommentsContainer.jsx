@@ -13,10 +13,12 @@ export default class CommentsContainer extends Component {
         />
     )
   }
-  componentDidMount() {
+//   componentDidMount() {
+//     this.props.getAllComments();
+// }
+  componentWillMount() {
     this.props.getAllComments();
 }
-
   render(){
     console.log('bitch i got you cornered', this.props)
     return(

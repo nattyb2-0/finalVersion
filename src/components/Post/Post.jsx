@@ -27,9 +27,10 @@ componentDidMount(){
         this.setState({
           comments: data
           })
+        .then(this.forceUpdate())
         console.log('this is the updated state of comments',this.state.comments)
         })
-      .catch(err => console.log(err))
+      .catch(err => console.log('*********', err))
     }
 
     addComment(comment){
