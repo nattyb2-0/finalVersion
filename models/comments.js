@@ -16,11 +16,11 @@ function showAllComments(req, res, next){
 
 
 function createComment (req, res, next){
-  console.log(req.body)
+  console.log('this is the req.body---->',req.body)
   db.none(`
-    INSERT INTO comments(postId, body, username )
+    INSERT INTO comments(postId,  username , body)
     VALUES ($1, $2, $3);`,
-    [post.id, req.body.body, user.username] )
+    [req.body.postId, req.body.username, req.body.body] )
   .then((comments)=>{
     res.comments= comments;
     next()
@@ -28,5 +28,5 @@ function createComment (req, res, next){
  .catch(error => next(error));
 }
 
-module.exports = {showAllComments}
+module.exports = {showAllComments, createComment}
 

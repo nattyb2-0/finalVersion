@@ -13,7 +13,7 @@
   font-size: 1.7em;
   padding: .4em;
   color:white;
-  text-shadow: 10px 10px black;
+
 }
 
 .descr{
@@ -24,7 +24,7 @@
   margin-top: 30px;
   color:white;
   font-size: 1.7em;
-   text-shadow: 10px 10px black;
+
 }
 
 .insp{
@@ -78,4 +78,24 @@ article h2 {
   background-color: rgba(255,255,255,.8);
 }
 
+#root-container > div > section.works > div {
+  color:white;
+  background-color: rgba(0,0,0,.5);
+}
 
+.home section{
+   background-color: rgba(0,0,0,.5);
+}
+#root-container > div > section.descr > h1{
+  color:red;
+}
+#root-container > div > section.insp > h1{
+  color:red;
+}
+
+#new > div:nth-child(1){
+  color:red;
+}
+#root-container > div > section.top > h1{
+  color:white;
+}

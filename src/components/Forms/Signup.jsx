@@ -27,6 +27,9 @@ export default class Signup extends Component {
         <input required type="email" className="email" required placeholder="something@something.com" ref={(input)=>{this.email=input}} />
         <input required type="password" className="password" required placeholder="password" ref={(input)=>{this.password=input}} />
         <button className="submit" onClick={this.createUser.bind(this)}>Sign UP NOw</button>
+        <div>
+          selec;
+        </div>
       </div>
 
 
