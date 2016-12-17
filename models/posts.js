@@ -1,3 +1,4 @@
+//adding comment
 const db = require('./db.js');
 
 function showAllPosts(req, res, next){
